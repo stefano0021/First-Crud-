@@ -13,7 +13,7 @@
     $obVaga->status = $_POST['status'];
 
      $obVaga->cadastrar();
-     echo "<pre>"; print_r($obVaga); echo "</prev>"; exit;
+    //  echo "<pre>"; print_r($obVaga); echo "</prev>"; exit;
     header('location: index.php?status=success');
     exit;
 
