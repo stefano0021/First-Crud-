@@ -120,7 +120,7 @@ class database
         $query = 'SELECT ' . $fields . ' FROM ' . $this->table . ' ' . $where . ' ' . $order . ' ' . ' ' . $limit;
 
         return $this->executar($query);
-    }
+    }   
     /** 
      * Método responsável por executar querys no banco de dados (útil para querys de consulta)
      * @params string query
@@ -138,4 +138,19 @@ class database
             die('ERROR: ' . $e->getMessage());
         }
     }
+
+    /**
+         * Método responsavel por executar exclusoes no banco de dados
+         * @params string $where
+         * return boolean 
+        */
+
+        public function delete ($where) {
+            //Monta query
+            $query = 'DELETE FROM '.$this->table. ' WHERE ' . $where;
+
+            //Executar query
+            $this->executar($query);
+            return true;
+        }
 }

@@ -60,6 +60,7 @@ class Vaga
      * @params string $limit
      * @return array
      */
+
     public static function getVagas($where = null, $order = null, $limit = null)
     {
         $objDataBase = new Database('vagas');
@@ -75,4 +76,15 @@ class Vaga
 
         return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class); 
     }
+
+    /** Funcao para excluir vagas no banco
+     * @return boolean
+     */
+
+    public function excluir() {
+        $objDatabase = new Database('vagas');
+        return ($objDatabase)->delete( 'id = ' . $this->id);
+
+    }
 }
+?>

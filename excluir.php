@@ -15,6 +15,13 @@
             header('location: index.php?status=error');
             exit;
         }   
+
+        //Validacao do post 
+        if(isset($_POST['excluir'])) {
+            $obVaga->excluir();
+            header('location: index.php?status=success');
+            exit;
+        }
    
     require __DIR__.'/includes/header.php';
     require __DIR__.'/includes/confirmarexclusao.php';
