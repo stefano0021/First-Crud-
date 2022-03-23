@@ -2,6 +2,7 @@
 
     require __DIR__.'/vendor/autoload.php';
     
+    define( 'TITLE', 'Cadastrar Vaga');
     
     use \App\Entity\Vaga;
     $obVaga = new Vaga;
