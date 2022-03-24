@@ -20,7 +20,7 @@ class database
      * Nome do banco de dados
      * @var string 
      */
-    const NAME = 'crudfirst';
+    const NAME = 'noticias';
 
     /**
      * Usuário banco de dados

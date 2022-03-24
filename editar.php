@@ -2,10 +2,10 @@
 
     require __DIR__.'/vendor/autoload.php';
 
-    define('TITLE', 'Editar Vaga');
+    define('TITLE', 'Editar Noticias');
     
     
-    use \App\Entity\Vaga;
+    use \App\Entity\Noticias;
 
     // //echo "<pre>"; print_r($_POST); echo "</pre>"; exit;
 
@@ -15,22 +15,24 @@
         exit;
     }
 
-        //consulta vaga
-        $obVaga = Vaga::getVaga($_GET['id']);
+        //consulta Noticias
+        $obVaga = Noticias::getNoticias($_GET['id']);
         
-        //Validacao da Vaga
-        if(!$obVaga instanceof Vaga) {
+        //Validacao das Noticias
+        if(!$obNoticias instanceof Noticias) {
             header('location: index.php?status=error');
             exit;
         }   
 
         //Validacao do post 
-        if(isset($_POST['titulo'], $_POST['descricao'], $_POST['status'])){
-            $obVaga->titulo = $_POST['titulo'];
-            $obVaga->descricao = $_POST['descricao'];
-            $obVaga->status = $_POST['status'];
+        if(isset($_POST['titulo'], $_POST['descricao'], $_POST['autor'], $_POST['data'], $_POST['status'])){
+            $obNoticias->titulo = $_POST['titulo'];
+            $obNoticias->descricao = $_POST['descricao'];
+            $obNoticias->autor = $_POST['autor'];
+            $obNoticias->data = $_POST['data'];
+            $obNoticias->status = $_POST['status'];
         
-            $obVaga->atualizar();
+            $obNoticias->atualizar();
             // echo "<pre>"; print_r($this); echo "</pre>"; exit;
         
        
