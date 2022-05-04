@@ -15,7 +15,7 @@
         $obNoticias->data = $_POST['data'];
         $obNoticias->status = $_POST['status'];
 
-     $obVaga->cadastrar();
+     $obNoticias->cadastrar();
     //  echo "<pre>"; print_r($obVaga); echo "</prev>"; exit;
     header('location: index.php?status=success');
     exit;

@@ -8,7 +8,7 @@
     }
 
         //consulta Noticias
-        $obNoticias = Noticias::getNoticias($_GET['id']);
+        $obNoticias = Noticias::getNoticia($_GET['id']);
         
         //Validacao das Noticias
         if(!$obNoticias instanceof Noticias) {

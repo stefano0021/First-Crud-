@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
     <label>Data</label>
-            <input type="date" required class="form-control" name="data" value="<?php echo isset($obNoticias->data) ? $obNoticias->data : ''; ?>">
+            <input type="date" required class="form-control" name="data" value="<?php echo isset($obNoticias->data) ? date('Y-m-d', strtotime($obNoticias->data)) : ''; ?>">
 </div>
 <div class="form-group">
         <label>Autor</label>
